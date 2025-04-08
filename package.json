@@ -11,6 +11,7 @@
     "dist/",
     "*.d.ts"
   ],
+  "main": "dist/prod/index.js",
   "scripts": {
     "build": "rimraf dist && rollup -c && pnpm types",
     "types": "tsc -p tsconfig.build.json",
@@ -55,19 +56,4 @@
   "publishConfig": {
     "access": "public"
   },
-  "exports": {
-    ".": {
-      "types": "./dist/types/index.d.ts",
-      "test": "./dist/dev/index.js",
-      "development": "./dist/dev/index.js",
-      "default": "./dist/prod/index.js"
-    },
-    "./map": {
-      "types": "./dist/types/map.d.ts",
-      "test": "./dist/dev/map.js",
-      "development": "./dist/dev/map.js",
-      "default": "./dist/prod/map.js"
-    },
-    "./package.json": "./package.json"
-  }
 }
